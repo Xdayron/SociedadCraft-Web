@@ -15,19 +15,8 @@
       <h1>Actualizaciones</h1>
     </div>
     
-    <div class="main-content">
-      <div class="post">
-        <h3><a href="#" style="color: #007BFF;">¡Servidor Abierto!</a></h3>
-        <div class="content">
-          <b>Hemos regresado</b>
-          <p>Aqui estan las nuevas cosas que hemos traido de nuestro regreso</p>
-          <ul>
-            <li>Servidor compatible con Bedrock y Java</li>
-            <li>Nuevo dominio, ahora buscanos como: sociedadcraft.lat</li>
-          </ul>
-          <b>¡Llegaran nuevas cosas!</b>
-        </div>
-      </div>
+    <div class="main-content" id="postsContainer">
+      <!-- Aquí se cargarán los posts dinámicamente -->
     </div>
   </div>
 
@@ -61,5 +50,59 @@
       &copy; 2024 SociedadCraft. Todos los derechos reservados.
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Función para cargar y mostrar los posts desde data.json
+    async function cargarPosts() {
+      try {
+        const response = await axios.get('./data.json');
+        const posts = response.data;
+        
+        const postsContainer = document.getElementById('postsContainer');
+        
+        posts.forEach(post => {
+          const postElement = document.createElement('div');
+          postElement.classList.add('post');
+          
+          const tituloElement = document.createElement('h3');
+          const tituloLink = document.createElement('a');
+          tituloLink.href = '#';
+          tituloLink.style.color = '#007BFF';
+          tituloLink.textContent = post.titulo;
+          tituloElement.appendChild(tituloLink);
+          
+          const contenidoElement = document.createElement('div');
+          contenidoElement.classList.add('content');
+          
+          const contenidoIntro = document.createElement('b');
+          contenidoIntro.textContent = post.contenido;
+          contenidoElement.appendChild(contenidoIntro);
+          
+          const ulElement = document.createElement('ul');
+          post.nuevas_cosas.forEach(item => {
+            const liElement = document.createElement('li');
+            liElement.textContent = item;
+            ulElement.appendChild(liElement);
+          });
+          contenidoElement.appendChild(ulElement);
+          
+          const proximoElement = document.createElement('b');
+          proximoElement.textContent = post.proximo;
+          contenidoElement.appendChild(proximoElement);
+          
+          postElement.appendChild(tituloElement);
+          postElement.appendChild(contenidoElement);
+          
+          postsContainer.appendChild(postElement);
+        });
+      } catch (error) {
+        console.error('Error al cargar los posts:', error);
+      }
+    }
+    
+    // Llamar a la función para cargar los posts al cargar la página
+    cargarPosts();
+  </script>
 </body>
 </html>
