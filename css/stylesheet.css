@@ -7,7 +7,7 @@ body {
 	/*Upload a new one to the img folder.*/
 	/*Make sure you name it 'minecraft.jpg'*/
 	background: linear-gradient(rgba(20, 26, 35,0.55),rgba(20, 26, 35, 0.55)),
-				url("../img/minecraft.jpg") no-repeat center center fixed;
+				url("../img/5.jpg") no-repeat center center fixed;
 	background-size: cover;
 	font-family: "Open Sans", Helvetica;
 	margin: 0;
@@ -27,6 +27,7 @@ html, body {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+			
 }
 
 a {

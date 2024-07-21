@@ -1,11 +1,20 @@
 [
   {
+    "titulo": "¡Servidor de Mods!",
+    "contenido": "El servidor ahora esta disponible con MODS.",
+    "nuevas_cosas": [
+      "Servidor exclusivamente compatible con Fabric",
+      "El Modpack utilizado es: Horizons hecho por Rubius"
+    ],
+    "fecha": "20/07/2024"
+  },
+  {
     "titulo": "¡Servidor Abierto!",
-    "contenido": "Hemos regresado. Aqui estan las nuevas cosas que hemos traido de nuestro regreso.",
+    "contenido": "Hemos regresado.",
     "nuevas_cosas": [
       "Servidor compatible con Bedrock y Java",
       "Nuevo dominio, ahora buscanos como: sociedadcraft.lat"
     ],
-    "proximo": "¡Llegaran nuevas cosas!"
+    "fecha": "01/07/2024"
   }
 ]
