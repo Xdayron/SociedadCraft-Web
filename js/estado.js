@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function cargarPosts() {
     try {
-        const response = await axios.get('./data.json');
+        const response = await axios.get('./news.json');
         const posts = response.data;
 
         const postsContainer = document.getElementById('postsContainer');
