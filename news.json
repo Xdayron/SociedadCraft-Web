@@ -1,5 +1,14 @@
 [
   {
+    "titulo": "¡Servidor Desconectado!",
+    "contenido": "El servidor ahora esta sin conexión",
+    "nuevas_cosas": [
+      "No te preocupes, tus cosas estan guardadas",
+      "Estamos en un nuevo proyecto que esperemos les encante."
+    ],
+    "fecha": "30/09/2024"
+  },
+  {
     "titulo": "¡Servidor de Mods!",
     "contenido": "El servidor ahora esta disponible con MODS.",
     "nuevas_cosas": [
